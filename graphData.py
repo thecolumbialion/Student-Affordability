@@ -10,16 +10,21 @@ import csv
 # loads and cleans data 
 def get_data(filename): 
 	with open('./data/'+filename, 'rb') as csvfile:
-		spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-		for item in spamreader:
-			print(item)
+		spamreader = csv.reader(csvfile)
+		for row in spamreader:
+			print(row[1])
 
 get_data("researchData.csv")
 
 # creates new plot
 def visualize(): 
 	print("buffer")
+
+
+def aid_per_stud(totalAid, undPop):
+	perStud = totalAid / undPop
 	
+
 # shows results 
 def show_results(p):
 	show(p)
